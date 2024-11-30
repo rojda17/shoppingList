@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.shopping-list li {
+    /* liste elemanlarının yan yana gelmesini sağlar */
+    display: flex;
+    /* ortalamak için */
+    align-items: center;
+    /* aralarındaki mesafe */
+    gap: 5px;
+    background-color: antiquewhite;
+}
+
+/* item-name in satırı olduğu gibi kaplaması için.
+diğer elemanlar sadece kendi alanı kadar yer kaplar.
+*/
+.shopping-list li .item-name {
+    flex: 1;
+    padding: 5px 10px;
+}
+
+.shopping-list li .delete-icon {
+    /* başlangıçta gösterilmesin */
+    transform: scale(0);
+    transition: transform 200ms;
+    font-size: 30px !important;
+
+}
+
+.shopping-list li:hover .delete-icon {
+    transform: scale(1);
+
+}
+
+.shopping-list li[item-completed] .item-name {
+    text-decoration: line-through;
+    color: #999;
+}
